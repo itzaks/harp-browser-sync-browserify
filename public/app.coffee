@@ -1,4 +1,4 @@
 $ = require 'jquery'
 $ ->
   $ 'body'
-  .append 'jquery too! yay 111'
+  .append 'jquery too! yay 22'

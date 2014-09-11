@@ -4,8 +4,10 @@
   "description": "A harp boilerplate with browserify and browser-sync",
   "main": "app.js",
   "scripts": {
-    "postinstall": "mkdir public/build",
-    "start": "harp server public & watchify -t coffeeify app/index.coffee -o public/app.js -dv & browser-sync start --config bs-config.js",
+    "build-js ": "browserify -t coffeeify public/app.coffee -o public/bundle.js",
+    "watch-js": "watchify -t coffeeify public/app.coffee -o public/bundle.js -dv & browser-sync start --config bs-config.js",
+    "start": "harp server & npm run watch-js",
+    "compile": "npm run build-js && harp compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
